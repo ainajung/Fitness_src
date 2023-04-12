@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Browse Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> Browse Page </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <p> Member ID: {{currentId}} </p>
+
+  <ion-label> Full name </ion-label>
+  <ion-input type= "string" [(ngModel)]= "currentName" ></ion-input>
+
+  <ion-label> Date of birth </ion-label>
+  <ion-input type= "date" [(ngModel)]= "currentDate" ></ion-input>
+
+  
+
+</ion-content>

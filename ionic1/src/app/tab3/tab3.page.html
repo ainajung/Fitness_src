@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Add Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Add Page</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+
+    <h3> Add New Fitness Member </h3>
+
+    <ion-item>
+      <ion-label position= "floating"> Member ID </ion-label>
+      <ion-input type= "number" placeholder= "Enter your ID" [(ngModel)]= "mId" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position= "floating"> Full name </ion-label>
+      <ion-input type= "text" placeholder= "Enter your full name"  [(ngModel)]= "mName" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position= "floating"> Date of birth </ion-label>
+      <br><br>
+      <ion-datetime color="rose" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "mDate" required></ion-datetime>
+      <br>
+    </ion-item>
+    <ion-item>
+      <ion-label> Gender </ion-label>
+      <ion-select interface= "popover" placeholder= "Select your gender"  [(ngModel)]= "mGender" required>
+        <ion-select-option value= "female"> Female </ion-select-option>
+        <ion-select-option value= "male"> Male </ion-select-option>
+        <ion-select-option value= "unspecified"> Unspecified </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label> Membership type </ion-label>
+      <ion-select interface= "popover" placeholder= "Select your Membership Type"  [(ngModel)]= "mType" required>
+        <ion-select-option value= "basic"> Basic </ion-select-option>
+        <ion-select-option value= "premium"> Premium </ion-select-option>
+        <ion-select-option value= "corporate"> Corporate </ion-select-option>
+        <ion-select-option value= "student"> Student </ion-select-option>
+        <ion-select-option value= "dayPass"> Day Pass </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position= "floating"> Membership start day </ion-label>
+      <br><br>
+      <ion-datetime color="rose" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "mStart" required></ion-datetime>
+      <br>
+    </ion-item>
+    <ion-item>
+      <ion-label position= "floating"> Contacts </ion-label>
+      <ion-input type= "number" placeholder= "Enter your phone number"  [(ngModel)]= "mNumber" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+       fill="solid"
+       label="Email"
+       labelPlacement="floating"
+       helperText="Enter a valid email"
+       errorText="Invalid email"
+       ngModel
+       email
+       [(ngModel)]= "mEmail"
+       requried
+       ></ion-textarea>
+     </ion-item>
+     <ion-item>
+      <ion-textarea label="Residential address" labelPlacement="floating" [counter]="true" maxlength="50"  [(ngModel)]= "mAddress" required></ion-textarea> 
+     </ion-item>
+     <ion-item>
+      <ion-label position= "floating"> Emergency contact number </ion-label>
+      <ion-input type= "number" placeholder= "Enter emergency phone number"  [(ngModel)]= "mEmergency" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea label="Medical condition" labelPlacement="floating" [counter]="true" maxlength="100"  [(ngModel)]= "mMedical"></ion-textarea> 
+     </ion-item>
+    <ion-item>
+      <ion-checkbox  [(ngModel)]= "mTrial"> Trial Member? </ion-checkbox>
+    </ion-item>
+
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block"> Add </ion-button>
+      </ion-col>
+    </ion-row>
+    <br>
+
+  </form>
+
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
