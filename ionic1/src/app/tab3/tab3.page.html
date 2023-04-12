@@ -19,21 +19,21 @@
 
     <ion-item>
       <ion-label position= "floating"> Member ID </ion-label>
-      <ion-input type= "number" placeholder= "Enter your ID" [(ngModel)]= "mId" required></ion-input>
+      <ion-input type= "number" name="memberId" placeholder= "Enter your ID" [(ngModel)]= "mId" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position= "floating"> Full name </ion-label>
-      <ion-input type= "text" placeholder= "Enter your full name"  [(ngModel)]= "mName" required></ion-input>
+      <ion-input type= "text" name="memberName" placeholder= "Enter your full name"  [(ngModel)]= "mName" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position= "floating"> Date of birth </ion-label>
       <br><br>
-      <ion-datetime color="rose" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "mDate" required></ion-datetime>
+      <ion-datetime name="memberDate" color="rose" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "mDate" required></ion-datetime>
       <br>
     </ion-item>
     <ion-item>
       <ion-label> Gender </ion-label>
-      <ion-select interface= "popover" placeholder= "Select your gender"  [(ngModel)]= "mGender" required>
+      <ion-select interface= "popover" name="memberGender" placeholder= "Select your gender"  [(ngModel)]= "mGender" required>
         <ion-select-option value= "female"> Female </ion-select-option>
         <ion-select-option value= "male"> Male </ion-select-option>
         <ion-select-option value= "unspecified"> Unspecified </ion-select-option>
@@ -41,7 +41,7 @@
     </ion-item>
     <ion-item>
       <ion-label> Membership type </ion-label>
-      <ion-select interface= "popover" placeholder= "Select your Membership Type"  [(ngModel)]= "mType" required>
+      <ion-select interface= "popover" name="memberType" placeholder= "Select your Membership Type"  [(ngModel)]= "mType" required>
         <ion-select-option value= "basic"> Basic </ion-select-option>
         <ion-select-option value= "premium"> Premium </ion-select-option>
         <ion-select-option value= "corporate"> Corporate </ion-select-option>
@@ -52,15 +52,16 @@
     <ion-item>
       <ion-label position= "floating"> Membership start day </ion-label>
       <br><br>
-      <ion-datetime color="rose" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "mStart" required></ion-datetime>
+      <ion-datetime color="rose" name="memberStart" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "mStart" required></ion-datetime>
       <br>
     </ion-item>
     <ion-item>
       <ion-label position= "floating"> Contacts </ion-label>
-      <ion-input type= "number" placeholder= "Enter your phone number"  [(ngModel)]= "mNumber" required></ion-input>
+      <ion-input type= "number" name="memberNumber" placeholder= "Enter your phone number"  [(ngModel)]= "mNumber" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-textarea
+       name= "memberEmail"
        fill="solid"
        label="Email"
        labelPlacement="floating"
@@ -73,23 +74,23 @@
        ></ion-textarea>
      </ion-item>
      <ion-item>
-      <ion-textarea label="Residential address" labelPlacement="floating" [counter]="true" maxlength="50"  [(ngModel)]= "mAddress" required></ion-textarea> 
+      <ion-textarea label="Residential address"  name="memberAddress" labelPlacement="floating" [counter]="true" maxlength="50"  [(ngModel)]= "mAddress" required></ion-textarea> 
      </ion-item>
      <ion-item>
       <ion-label position= "floating"> Emergency contact number </ion-label>
-      <ion-input type= "number" placeholder= "Enter emergency phone number"  [(ngModel)]= "mEmergency" required></ion-input>
+      <ion-input type= "number" name="memberEmergency" placeholder= "Enter emergency phone number"  [(ngModel)]= "mEmergency" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-textarea label="Medical condition" labelPlacement="floating" [counter]="true" maxlength="100"  [(ngModel)]= "mMedical"></ion-textarea> 
+      <ion-textarea label="Medical condition" name="memberMedical" labelPlacement="floating" [counter]="true" maxlength="100"  [(ngModel)]= "mMedical"></ion-textarea> 
      </ion-item>
     <ion-item>
-      <ion-checkbox  [(ngModel)]= "mTrial"> Trial Member? </ion-checkbox>
+      <ion-checkbox name="memberTrial" [(ngModel)]= "mTrial"> Trial Member? </ion-checkbox>
     </ion-item>
 
     <br>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block"> Add </ion-button>
+        <ion-button (click)="add()" type="submit" color="danger" expand="block"> Add </ion-button>
       </ion-col>
     </ion-row>
     <br>

@@ -13,14 +13,94 @@
     </ion-toolbar>
   </ion-header>
 
-  <p> Member ID: {{currentId}} </p>
+  <ion-searchbar show-cancel-button="focus" color= "medium" placeholder="Search Member Id"></ion-searchbar>
 
-  <ion-label> Full name </ion-label>
-  <ion-input type= "string" [(ngModel)]= "currentName" ></ion-input>
+  <ion-item> <p> Member ID: {{currentId}} </p> </ion-item>
 
-  <ion-label> Date of birth </ion-label>
-  <ion-input type= "date" [(ngModel)]= "currentDate" ></ion-input>
+  <ion-item>
+    <ion-label position= "floating"> Full name </ion-label>
+    <ion-input type= "string" name="memberName4" [(ngModel)]= "currentName"></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position= "floating"> Date of birth </ion-label>
+    <br><br>
+    <ion-datetime name="memberDate" name="memberDate4" color="rose" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "currentDate"></ion-datetime>
+      <br>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position= "floating"> Gender </ion-label>
+    <ion-select interface= "popover" name="memberGender4" [(ngModel)]= "currentGender">
+      <ion-select-option value= "female"> Female </ion-select-option>
+      <ion-select-option value= "male"> Male </ion-select-option>
+      <ion-select-option value= "unspecified"> Unspecified </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position= "floating"> Membership type </ion-label>
+       <ion-select interface= "popover" name="memberType4" [(ngModel)]= "currentType">
+         <ion-select-option value= "basic"> Basic </ion-select-option>
+         <ion-select-option value= "premium"> Premium </ion-select-option>
+         <ion-select-option value= "corporate"> Corporate </ion-select-option>
+         <ion-select-option value= "student"> Student </ion-select-option>
+         <ion-select-option value= "dayPass"> Day Pass </ion-select-option>
+       </ion-select>
+  </ion-item>
+    
+  <ion-item>
+    <ion-label position= "floating"> Membership start day </ion-label>
+    <br><br>
+    <ion-datetime name="memberStart4" color="rose" presentation= "date" [showDefaultButtons]="true"  [(ngModel)]= "currentStart"></ion-datetime>
+    <br>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position= "floating"> Contact number </ion-label>
+    <ion-input name="memberNumber4" type= "number" [(ngModel)]= "currentNumber"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea
+     name= "memberEmail4"
+     fill="solid"
+     label="Email"
+     labelPlacement="floating"
+     errorText="Invalid email"
+     ngModel
+     email
+     [(ngModel)]= "currentEmail"
+     ></ion-textarea>
+  </ion-item>
+
+   <ion-item>
+    <ion-textarea label="Residential address"  name="memberAddress4" labelPlacement="floating" [counter]="true" maxlength="50"  [(ngModel)]= "currentAddress"></ion-textarea> 
+  </ion-item>
   
+  <ion-item>
+    <ion-label position= "floating"> Emergency contact number </ion-label>
+    <ion-input type= "number" name="memberEmergency4" placeholder= "Enter emergency phone number"  [(ngModel)]= "currentEmergency"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea label="Medical condition" name="memberMedical4" labelPlacement="floating" [counter]="true" maxlength="100"  [(ngModel)]= "currentMedical"></ion-textarea> 
+  </ion-item>
+
+  <ion-item>
+    <ion-checkbox name="memberTrial4" [(ngModel)]= "currentTrial"> Trial Member? </ion-checkbox>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="edit()"> Edit </ion-button>
+      <ion-button (click)="prev()"> Prev </ion-button>
+      <ion-button (click)="next()"> Next </ion-button>
+      <ion-button (click)="delete()" color= "danger"> Delete </ion-button>
+    </ion-col>
+  </ion-row>
+
+
+
 
 </ion-content>

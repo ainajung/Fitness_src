@@ -37,4 +37,18 @@ export class MemberService {
         return this.mbData;
     }
 
+    getTrialList() : Member[] {
+
+        let trialMembers = []
+
+        for(let member in this.mbData) {
+            if (this.mbData[member].isTrialMember) {
+                trialMembers.push(this.mbData[member])
+            }
+
+        }
+        return trialMembers;
+    }
+
+
 }
